@@ -29,3 +29,17 @@ const buttonGenerate = document.getElementById('generate');
 console.log(buttonGenerate);
 const buttonReset = document.getElementById('reset');
 console.log(buttonReset);
+
+//3. Adding event listener to Generate Button
+
+buttonGenerate.addEventListener('click', function(){
+
+    //3.1 Collecting values from inputs
+    const boxNumber = inputBoxNumber.value;
+    console.log(boxNumber);
+    const min = inputMin.value;
+    console.log(min);
+    const max = inputMax.value;
+    console.log(max);
+
+})
