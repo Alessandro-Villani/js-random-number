@@ -30,11 +30,15 @@ console.log(buttonGenerate);
 const buttonReset = document.getElementById('reset');
 console.log(buttonReset);
 
-//3. Adding event listener to Generate Button
+//3. Picking Target
+
+let targetNumberDisplay = document.getElementById('number-display');
+
+//4. Adding event listener to Generate Button
 
 buttonGenerate.addEventListener('click', function(){
 
-    //3.1 Collecting values from inputs
+    //4.1 Collecting values from inputs
     const boxNumber = inputBoxNumber.value;
     console.log(boxNumber);
     const min = inputMin.value;
