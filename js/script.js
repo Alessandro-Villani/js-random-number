@@ -33,12 +33,20 @@ console.log(buttonReset);
 //3. Picking Target
 
 const targetNumberDisplay = document.getElementById('number-display');
+const targetErrorBox = document.getElementById('error-box');
+const targetErrorMin = document.getElementById('error-min');
+const targetErrorMax = document.getElementById('error-max');
 
 //4. Adding event listener to Generate Button
 
 buttonGenerate.addEventListener('click', function(){
 
-
+    targetErrorBox.innerText ='';
+    targetErrorBox.classList.remove('bg-danger');
+    targetErrorMin.innerText ='';
+    targetErrorMin.classList.remove('bg-danger');
+    targetErrorMax.innerText ='';
+    targetErrorMax.classList.remove('bg-danger');
 
     //4.1 Collecting values from inputs
     const boxNumber = parseInt(inputBoxNumber.value.trim());
@@ -48,7 +56,31 @@ buttonGenerate.addEventListener('click', function(){
     const max = parseInt(inputMax.value.trim());
     console.log(max);
 
-    //TODO 4.2 Validation
+    //4.2 Validation
+
+    if (boxNumber <= 0 || !boxNumber){
+        targetErrorBox.innerHTML ='<i class="fa-solid fa-triangle-exclamation"></i> Il numero di box deve essere maggiore di 0';
+        targetErrorBox.classList.add('bg-danger');
+        return;
+    }
+
+    if (min < 0 || isNaN(min)){
+        targetErrorMin.innerHTML ='<i class="fa-solid fa-triangle-exclamation"></i> Il numero minimo deve essere maggiore o uguale a 0';
+        targetErrorMin.classList.add('bg-danger');
+        return;
+    }
+    
+    if (max < 0 || !max){
+        targetErrorMax.innerHTML ='<i class="fa-solid fa-triangle-exclamation"></i> Il numero massimo deve essere maggiore di 0';
+        targetErrorMax.classList.add('bg-danger');
+        return;
+    }
+
+    if (max <= min){
+        targetErrorMax.innerHTML ='<i class="fa-solid fa-triangle-exclamation"></i> Il numero massimo deve essere maggiore del minimo';
+        targetErrorMax.classList.add('bg-danger');
+        return;
+    }
 
     //4.3 Loop depending on input Box Number
     for (i = 0; i < boxNumber; i++){
@@ -87,4 +119,10 @@ buttonReset.addEventListener('click', function(){
     inputMin.value='';
     inputMax.value='';
     targetNumberDisplay.innerText='';
+    targetErrorBox.innerText ='';
+    targetErrorBox.classList.remove('bg-danger');
+    targetErrorMin.innerText ='';
+    targetErrorMin.classList.remove('bg-danger');
+    targetErrorMax.innerText ='';
+    targetErrorMax.classList.remove('bg-danger');
 })

@@ -37,3 +37,9 @@ main input{
 .odd{
     background-color: red;
 }
+
+.row:first-child p{
+    min-height: 30px;
+    font-size: 12px;
+    line-height: 30px;
+}
