@@ -1,0 +1,39 @@
+/*! DEBUG */
+
+.debug{
+    border: 1px dashed black;
+}
+
+/*! GENERICS */
+
+body{
+    background-color: lightblue;
+}
+
+/*! MAIN */
+
+main{
+    background-color: white;
+    min-height: 100vh;
+}
+
+main input{
+    height: 30px;
+    width: 50%;
+}
+
+.number-box{
+    min-height: 50px;
+}
+
+.number-box span{
+    line-height: 50px;
+}
+
+.even{
+    background-color: green;
+}
+
+.odd{
+    background-color: red;
+}
